@@ -10,7 +10,7 @@ import { LoggingMiddleware } from 'src/middlewares/logging.middleware';
 //for environment resolution
 const environment = process.env.NODE_ENV || 'development';
 dotenv.config({ path: `${environment}.env` });
-console.log(process.env.JWT_SECRET);
+
 @Module({
   imports: [
     MongooseModule.forRoot(process.env.DATABASE_URL, {

@@ -17,12 +17,6 @@ export class JwtAuthGuard implements CanActivate {
   ) {}
 
   async canActivate(context: ExecutionContext): Promise<boolean> {
-    // const isInternalRequest =
-    //   context.switchToHttp().getRequest().headers['x-internal-request'] ===
-    //   'true';
-    // if (isInternalRequest) {
-    //   return true;
-    // }
     const request = context.switchToHttp().getRequest();
     const authHeader = request.headers.authorization;
 
